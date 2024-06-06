@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login Form</title>
+</head>
+<body>
+<p>Student Login Form</p>
+<form th:action="@{/processForm11}" method="GET">
+   First <input type="text" name="studentName" placeholder="Enter ur Name">
+    <br><br>
+    <input type="text" name="studentPass" placeholder="Enter ur Password">
+    <br><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>

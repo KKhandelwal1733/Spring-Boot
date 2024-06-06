@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h2> KK Company Home Page</h2>
+<hr>
+User:<span sec:authentication="principal.username"></span>
+<br><br>
+Roles:<span sec:authentication="principal.authorities"></span>
+
+
+
+<div sec:authorize="hasRole('MANAGER')">
+    <hr>
+<p>
+    <a th:href="@{/leader}">Leadership Meeting</a>
+  (Only for manager peeps)
+</p>
+    </div>
+
+<div sec:authorize="hasRole('ADMIN')">
+    <hr>
+<p>
+    <a th:href="@{/systems}">Admins Details</a>
+    (Only for admin peeps)
+</p>
+</div>
+
+
+
+<hr>
+<p>Welcome to the KK Company home page.</p>
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" th:value="Logout"/>
+</form>
+</body>
+</html>
